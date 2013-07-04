@@ -19,14 +19,14 @@ if (H5P.getPath === undefined) {
   };
 }
 
-if (H5P.instance === undefined) {
+if (H5P.newInstance === undefined) {
   /**
-   * Helps create new H5P instances.
+   * Helps create new instance of H5P library.
    *
    * @param {Object} library Container library (the über name of the library(namespace, name and versionnumber)) and .
    * @returns {Object} Instance of library
    */
-  H5P.instance = function (library) {
+  H5P.newInstance = function (library) {
     // TODO: Add some try catching?
     // TODO: Dynamically try to load libraries currently not loaded?
     return new (H5P.classFromName(library.library.split(' ')[0]))(library.params, H5PEditor.contentId);
